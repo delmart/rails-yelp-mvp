@@ -1,0 +1,31 @@
+
+
+
+<div class="container text-center">
+  <h1>Your review</h1>
+  <div class="card">
+
+    <%= simple_form_for([@restaurant, @review]) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :content, :as => :text %>
+    <%= f.input :rating, as: :hidden %>
+    <ul class="c-rating" id="rating"></ul>
+
+    <%= f.button :submit %>
+    <%= link_to "Retour", restaurants_path, {class: "btn btn-primary"} %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    var el = document.querySelector('#rating');
+    var currentRating = 0;
+    var maxRating= 5;
+
+    rating(el, currentRating, maxRating, function (rating) {
+      $('#review_rating').val(rating);
+    });
+  })
+</script>

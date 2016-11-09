@@ -1,0 +1,26 @@
+
+
+<div class="container text-center">
+  <div class="card">
+   <h1><%= @restaurant.name %></h1>
+   <p><%= @restaurant.address %></p>
+   <p><%= @restaurant.phone_number %></p>
+   <p><%= icon('flag') %> <%=@restaurant.category %></p>
+  <% unless @restaurant.reviews.empty? %>
+  <div class="rating">
+     <% @restaurant.reviews.each do |review| %>
+        <div class="review">
+          <ul>
+          <% review.rating.times do %>
+              <li><%= icon('star', class: 'fa-2x') %></li>
+          <% end %>
+          </ul>
+          <p><%= review.content %></p>
+        </div>
+     <% end %>
+   </div>
+    <% end %>
+ </div>
+ <%= link_to "Retour", restaurants_path, {class: "btn btn-primary"} %>
+
+</div>

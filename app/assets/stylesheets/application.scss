@@ -1,2 +1,121 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.c-rating {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.c-rating__item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 24px;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  height: 24px;
+  background: url("stars.svg");
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.c-rating__item:hover,
+.c-rating__item.is-active {
+  background-position: -24px 0;
+}
+
+
+p{
+  font-family: 'Gentium Book Basic', serif;
+  font-size: 16px;
+}
+
+h1{
+  font-family: 'Nunito', sans-serif;
+}
+.banner{
+  background-image: url(http://www.birkacre.co.uk/files/images/misc/restaurant_n.jpg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1{
+    color: white;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    padding-top: 52px;
+    font-size: 65px;
+    letter-spacing: 3px;
+    text-shadow: 2px 3px black;
+  }
+  .btn{
+    position: relative;
+    top: 180px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 10px;
+  }
+}
+
+.container{
+  width: 800px;
+}
+
+.card{
+  background-color: #E6E7E8;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding: 35px;
+  box-shadow: 2px 2px 14px 0px #cfcfcf;
+  border-radius: 4px;
+  h1, a{
+    font-family: 'Nunito', sans-serif;
+  }
+
+}
+
+a.btn-link{
+  font-size: 40px;
+}
+
+.rating{
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+
+  .review {
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 2px;
+    }
+
+    i {
+      color: #F8B32A;
+      text-shadow: black 0px 0px 1px;
+    }
+  }
+}
+
+
+

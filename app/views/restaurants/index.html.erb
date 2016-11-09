@@ -1,0 +1,25 @@
+
+<div class="container text-center">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card">
+        <%= link_to restaurant.name, restaurant_path(restaurant), {class: "btn btn-link"} %>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.phone_number %></p>
+        <p><%= icon('flag') %> <%=restaurant.category %></p>
+        <%= link_to edit_restaurant_path(restaurant) do %>
+          <%= icon('pencil', class: 'fa-2x') %>
+        <% end %>
+        <%= link_to new_restaurant_review_path(restaurant) do %>
+          <%= icon('star', class: 'fa-2x') %>
+        <% end %>
+        <%= link_to restaurant_path(restaurant), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <%= icon('trash', class: 'fa-2x') %>
+        <% end %>
+      </div>
+    <% end %>
+        <br>
+      <div id="create_bt">
+        <%= link_to "create", new_restaurant_path, {class: "btn btn-info"} %>
+      </div>
+</div>
+
